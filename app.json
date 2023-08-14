@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "lets_date",
+    "scheme": "lets_date://",
     "slug": "lets_date",
     "version": "1.0.0",
     "orientation": "portrait",

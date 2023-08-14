@@ -168,35 +168,44 @@ const DATA = [
 const width = Dimensions.get('window').width
 const height = Dimensions.get('window').height
 
-const ChatItem = ({ item }: { item: ItemProps }) => (
-    <Pressable
-        onPress={() => {
-            console.log('go chating page.')
-        }}
-    >
-        <View style={styles.itemContainer}>
-            <View style={styles.imageContainer}>
-                <Image style={styles.image}
-                    resizeMode='cover'
-                    source={{ uri: item.image }}
-                />
-            </View>
-            <View style={styles.contentContainer}>
-                <Text style={styles.nameText}>{item.name}</Text>
-                <Text style={styles.contentText}>{item.message}</Text>
 
-            </View>
-            <View style={styles.timeContainer}>
-                <Text style={styles.timeText}>{dayjs(item.time).format("HH:MM")}</Text>
-            </View>
-
-        </View>
-        <View style={styles.div} />
-    </Pressable>
-);
 
 const Chat = () => {
     const router = useRouter();
+    const ChatItem = ({ item }: { item: ItemProps }) => {
+        const { id, name } = item
+
+        return (
+            <Pressable
+                onPress={() => {
+                    router.push({
+                        pathname: "/chat/ChatRoomScreen",
+                        params: { id, name },
+                    });
+                }}
+            >
+                <View style={styles.itemContainer}>
+                    <View style={styles.imageContainer}>
+                        <Image style={styles.image}
+                            resizeMode='cover'
+                            source={{ uri: item.image }}
+                        />
+                    </View>
+                    <View style={styles.contentContainer}>
+                        <Text style={styles.nameText}>{item.name}</Text>
+                        <Text style={styles.contentText} numberOfLines={1} ellipsizeMode="tail">{item.message}</Text>
+
+                    </View>
+                    <View style={styles.timeContainer}>
+                        <Text style={styles.timeText}>{dayjs(item.time).format("HH:MM")}</Text>
+                    </View>
+
+                </View>
+                <View style={styles.div} />
+            </Pressable>
+        )
+    }
+
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <View style={{
@@ -217,7 +226,7 @@ const Chat = () => {
 const styles = StyleSheet.create({
     contentContainer: {
         flexDirection: 'column',
-        width: '60%',
+        width: '65%',
         alignContent: 'space-between',
         justifyContent: 'space-between',
         paddingVertical: 8,
@@ -246,7 +255,7 @@ const styles = StyleSheet.create({
         color: '#353636'
     },
     timeContainer: {
-        width: '20%',
+        width: '15%',
         // backgroundColor: '#A5357C',
         alignItems: 'flex-end',
         justifyContent: 'flex-end'

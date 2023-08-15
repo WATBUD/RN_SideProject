@@ -13,10 +13,12 @@ import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { FontAwesome5 } from '@expo/vector-icons'
 import { CheckBox } from '@rneui/themed'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import { useRouter } from 'expo-router'
 
 const width = Dimensions.get('window').width
 const height = Dimensions.get('window').height
 const LoginScreen = () => {
+  const router = useRouter()
   const [account, setAccount] = useState('')
   const [password, setPassword] = useState('')
   const [checked, setChecked] = useState(false)
@@ -145,7 +147,7 @@ const LoginScreen = () => {
           </Pressable>
           <View style={styles.registorContainer}>
             <Text style={styles.registorText}>Now to Logistics? </Text>
-            <Pressable onPress={() => console.log('Registor page')}>
+            <Pressable onPress={() => router.push('/SignUpScreen')}>
               <Text style={styles.registorButton}> Registor</Text>
             </Pressable>
           </View>
@@ -197,7 +199,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingVertical: 16,
-    backgroundColor: '',
   },
   forgotText: {
     fontSize: 13,

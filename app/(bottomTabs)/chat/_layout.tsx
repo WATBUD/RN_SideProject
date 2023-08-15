@@ -1,4 +1,4 @@
-import { Stack } from "expo-router";
+import { Stack } from 'expo-router'
 
 const Layout = () => {
   return (
@@ -11,10 +11,10 @@ const Layout = () => {
         headerTintColor: '#404040',
         headerTitleStyle: {
           fontSize: 28,
-          fontWeight: '500'
+          fontWeight: '500',
         },
       }}
     />
-  );
-};
-export default Layout;
+  )
+}
+export default Layout

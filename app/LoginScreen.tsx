@@ -1,6 +1,6 @@
 import { Keyboard, StyleSheet, Text, TouchableWithoutFeedback, View, Image, Dimensions, TextInput, Pressable } from 'react-native'
 import React, { useEffect, useMemo, useRef, useState } from 'react'
-import { FontAwesome5, Ionicons } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
 import { CheckBox } from '@rneui/themed';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -22,7 +22,7 @@ const LoginScreen = () => {
     const login = () => console.log('click login')
 
     return (
-        <SafeAreaView style={{ flex: 1 }}>
+        <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                 <View style={{ flex: 1, alignItems: 'center' }}>
                     <Image style={{ width: width / 3, height: width / 3, marginTop: height / 10, marginBottom: 20 }}
@@ -93,7 +93,7 @@ const LoginScreen = () => {
                         </View>
                     </View>
 
-                    <View style={{flexDirection: 'row'}}>
+                    <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
                         <CheckBox
                             checked={checked}
                             onPress={() => setChecked(!checked)}
@@ -102,15 +102,14 @@ const LoginScreen = () => {
                             uncheckedIcon="checkbox-blank-outline"
                             checkedColor="#696969"
                             title='Remember me'
-                            containerStyle={{ backgroundColor: '#f2f2f2' }}
-                            textStyle={{ color: '#696969' }}
+                            textStyle={{ color: '#696969', fontWeight: '500' }}
                         />
-                        {/* <Pressable onPress={()=> console.log('forget password')}>
-                            <Text>Forget password</Text>
-                        </Pressable> */}
+                        <Pressable onPress={() => console.log('reset password page')}>
+                            <Text style={styles.forgotText}>Forgot Password?</Text>
+                        </Pressable>
                     </View>
 
-                    {/* 下方登入按鈕 */}
+                    {/* 登入按鈕 */}
                     <Pressable
                         style={[styles.loginContainer, { backgroundColor: buttonEnabled ? '#4169E1' : '#808080' }]}
                         onPress={() => {
@@ -121,6 +120,12 @@ const LoginScreen = () => {
                     >
                         <Text style={styles.loginText}>Login</Text>
                     </Pressable>
+                    <View style={styles.registorContainer}>
+                        <Text style={styles.registorText}>Now to Logistics? </Text>
+                        <Pressable onPress={() => console.log('Registor page')}>
+                            <Text style={styles.registorButton}> Registor</Text>
+                        </Pressable>
+                    </View>
 
                 </View>
             </TouchableWithoutFeedback>
@@ -157,7 +162,7 @@ const styles = StyleSheet.create({
         width: '70%',
         height: 50,
         position: 'absolute',
-        bottom: 20,
+        bottom: 50,
         borderRadius: 5,
         justifyContent: 'center'
     },
@@ -173,11 +178,28 @@ const styles = StyleSheet.create({
         paddingVertical: 16,
         backgroundColor: ''
     },
-    rememberText: {
+    forgotText: {
+        fontSize: 13,
+        fontWeight: '500',
+        color: '#0000FF',
+        paddingRight: 20
+    },
+    registorContainer: { 
+        flexDirection: 'row', 
+        position: 'absolute', 
+        bottom: 20, 
+        justifyContent: 'center', 
+        alignItems: 'center'
+    },
+    registorText: {
+        fontSize: 13,
+        fontWeight: '500',
         color: '#696969',
-        fontSize: 15,
-        marginLeft: 4
+    },
+    registorButton: {
+        fontSize: 13,
+        fontWeight: '500',
+        color: '#0000FF',
+        paddingRight: 20
     }
 })
-
-// https://cdn.logo.com/hotlink-ok/logo-social.png

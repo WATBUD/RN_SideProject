@@ -30,7 +30,10 @@ const LoginScreen = () => {
     [account, password],
   )
 
-  const login = () => console.log('click login')
+  const login = () => {
+    console.log('click login')
+    router.push('/card')
+  }
 
   return (
     <View style={{ flex: 1, backgroundColor: '#fff' }}>

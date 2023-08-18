@@ -21,12 +21,6 @@ const Personal = () => {
   const gender = 'M'
   return (
     <>
-      <Stack.Screen
-        options={{
-          title: 'Profile',
-          headerLargeStyle: { backgroundColor: '#fff' },
-        }}
-      />
       <ScrollView>
         <View
           style={{
@@ -162,9 +156,7 @@ const Personal = () => {
               paddingVertical: 5,
               justifyContent: 'space-between',
             }}
-            onPress={() => router.replace('/LoginScreen')}
-            
-            >
+            onPress={() => router.replace('/LoginScreen')}>
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
               <MaterialIcons name="logout" size={24} color="#696969" />
               <Text style={{ paddingLeft: 5, color: '#696969' }}>Logout</Text>

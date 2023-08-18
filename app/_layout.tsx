@@ -1,12 +1,16 @@
 import { Stack } from 'expo-router'
 // import { store } from "../store";
 import { Platform, SafeAreaView } from 'react-native'
+import { SafeAreaView as SafeAreaViewContext } from 'react-native-safe-area-context'
 
 export default function AppLayout() {
+  const SafeArea =
+    Platform.OS === 'android' ? SafeAreaViewContext : SafeAreaView
+
   return (
     // <Provider>
     //   <ReduxProvider store={store}>
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeArea style={{ flex: 1 }}>
       <Stack screenOptions={{ headerShown: false }}>
         <Stack.Screen
           name="LoginScreen"
@@ -20,6 +24,6 @@ export default function AppLayout() {
           }}
         />
       </Stack>
-    </SafeAreaView>
+    </SafeArea>
   )
 }

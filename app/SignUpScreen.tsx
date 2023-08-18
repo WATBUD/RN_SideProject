@@ -9,26 +9,26 @@ import {
 import React, { useMemo, useRef, useState } from 'react'
 import { Stack, useRouter } from 'expo-router'
 import { ColorStyles } from './constants/ColorStyle'
-import { Controller, useForm } from 'react-hook-form'
+// import { Controller, useForm } from 'react-hook-form'
 
 const width = Dimensions.get('window').width
 const height = Dimensions.get('window').height
 const SignUpScreen = () => {
   const router = useRouter()
-  const {
-    control,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm({
-    defaultValues: {
-      name: '',
-      password: '',
-      checkPassword: '',
-    //   mobile: '',
-      mail: '',
-    },
-  })
+  // const {
+  //   control,
+  //   handleSubmit,
+  //   watch,
+  //   formState: { errors },
+  // } = useForm({
+  //   defaultValues: {
+  //     name: '',
+  //     password: '',
+  //     checkPassword: '',
+  //   //   mobile: '',
+  //     mail: '',
+  //   },
+  // })
   const createAccount = () => console.log('create Account')
 
   return (
@@ -73,7 +73,7 @@ const SignUpScreen = () => {
       <Pressable
         style={[styles.loginContainer, { backgroundColor: '#4169E1' }]}
         onPress={() => {
-          handleSubmit(createAccount)
+          // handleSubmit(createAccount)
           console.log(77777)
         }}
         // disabled={!buttonEnabled}

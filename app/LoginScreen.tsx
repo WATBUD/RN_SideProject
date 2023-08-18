@@ -12,7 +12,6 @@ import {
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { FontAwesome5 } from '@expo/vector-icons'
 import { CheckBox } from '@rneui/themed'
-import { SafeAreaView } from 'react-native-safe-area-context'
 import { useRouter } from 'expo-router'
 
 const width = Dimensions.get('window').width
@@ -34,7 +33,7 @@ const LoginScreen = () => {
   const login = () => console.log('click login')
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
+    <View style={{ flex: 1, backgroundColor: '#fff' }}>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <View style={{ flex: 1, alignItems: 'center' }}>
           <Image
@@ -153,7 +152,7 @@ const LoginScreen = () => {
           </View>
         </View>
       </TouchableWithoutFeedback>
-    </SafeAreaView>
+    </View>
   )
 }
 

@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 module.exports = {
   root: true, // 根目錄的設定文件
   parser: '@typescript-eslint/parser', // 使用 TypeScript 解析器
@@ -8,6 +9,11 @@ module.exports = {
     'plugin:prettier/recommended', // Prettier 推薦的規則
   ],
   rules: {
-    'prettier/prettier': 'error', // 要求符合 Prettier 的排版風格
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ], // 要求符合 Prettier 的排版風格
   },
 }

@@ -1,9 +1,9 @@
 import { Tabs } from 'expo-router'
 import React from 'react'
-import { Image } from 'react-native'
+//import { Image } from 'react-native'
 import Ionicons from '@expo/vector-icons/Ionicons'
 import {
-  EvilIcons,
+  //EvilIcons,
   FontAwesome,
   MaterialCommunityIcons,
 } from '@expo/vector-icons'
@@ -11,33 +11,6 @@ import {
 export default function tabsLayout() {
   return (
     <Tabs screenOptions={{ headerShown: false }}>
-      <Tabs.Screen
-        name="card"
-        options={{
-          title: '抽卡',
-          href: '/card',
-          tabBarActiveTintColor: '#404040',
-          tabBarIcon: ({ focused }) => {
-            return (
-              <>
-                {focused ? (
-                  <MaterialCommunityIcons
-                    name="card-text"
-                    size={24}
-                    color="#404040"
-                  />
-                ) : (
-                  <MaterialCommunityIcons
-                    name="card-text-outline"
-                    size={24}
-                    color="#404040"
-                  />
-                )}
-              </>
-            )
-          },
-        }}
-      />
       <Tabs.Screen
         name="chat"
         options={{
@@ -51,6 +24,33 @@ export default function tabsLayout() {
                   <FontAwesome name="commenting" size={24} color="#404040" />
                 ) : (
                   <FontAwesome name="commenting-o" size={24} color="#404040" />
+                )}
+              </>
+            )
+          },
+        }}
+      />
+      <Tabs.Screen
+        name="card"
+        options={{
+          title: '抽卡',
+          href: '/card',
+          tabBarActiveTintColor: '#404040',
+          tabBarIcon: ({ focused }) => {
+            return (
+              <>
+                {focused ? (
+                  <MaterialCommunityIcons
+                    name="cards"
+                    size={24}
+                    color="#404040"
+                  />
+                ) : (
+                  <MaterialCommunityIcons
+                    name="cards-outline"
+                    size={24}
+                    color="#404040"
+                  />
                 )}
               </>
             )

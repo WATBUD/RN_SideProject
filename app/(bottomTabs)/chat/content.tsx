@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react'
+import React from 'react' //useEffect, useMemo, useRef, useState
 import {
   StyleSheet,
   Text,
@@ -8,13 +8,12 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
   FlatList,
-  Dimensions,
+  //Dimensions,
   StatusBar,
 } from 'react-native'
 import { useRouter } from 'expo-router'
 import dayjs from 'dayjs'
 // import Toast from '@ant-design/react-native/lib/toast'
-
 type ItemProps = {
   id: string
   name: string
@@ -180,8 +179,8 @@ const DATA = [
   },
 ]
 
-const width = Dimensions.get('window').width
-const height = Dimensions.get('window').height
+//const width = Dimensions.get('window').width
+//const height = Dimensions.get('window').height
 
 const Chat = () => {
   const router = useRouter()
@@ -207,17 +206,22 @@ const Chat = () => {
           <View style={styles.contentContainer}>
             <Text style={styles.nameText}>{item.name}</Text>
             <Text
-              style={styles.contentText}
+              style={{ fontSize: 14, color: '#353636' }}
               numberOfLines={1}
               ellipsizeMode="tail">
               {item.message}
             </Text>
           </View>
-          <View style={styles.timeContainer}>
-            <Text style={styles.timeText}>
-              {dayjs(item.time).format('HH:MM')}
-            </Text>
-          </View>
+          <Text
+            style={{
+              fontSize: 13,
+              color: '#696969',
+              marginRight: 5,
+              //backgroundColor: 'red',
+              //paddingRight: width * 0.02,
+            }}>
+            {dayjs(item.time).format('HH:MM')}
+          </Text>
         </View>
         <View style={styles.div} />
       </Pressable>
@@ -236,6 +240,7 @@ const Chat = () => {
           renderItem={({ item }) => <ChatItem item={item} />}
           keyExtractor={item => item.id}
           scrollEnabled={true}
+          showsVerticalScrollIndicator={false} // 隐藏垂直滚动条
         />
       </View>
     </TouchableWithoutFeedback>
@@ -245,44 +250,38 @@ const Chat = () => {
 const styles = StyleSheet.create({
   contentContainer: {
     flexDirection: 'column',
-    width: '65%',
+    //width: '65%',
+    flex: 1,
     alignContent: 'space-between',
-    justifyContent: 'space-between',
-    paddingVertical: 8,
-    paddingHorizontal: 4,
+    paddingLeft: 10,
+    // borderColor: 'blue',
+    // borderWidth: 1,
   },
   itemContainer: {
     backgroundColor: '#F5F5F5',
-    height: height / 12,
+    height: 80,
     flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
     // borderBottomColor: '#606060',
     // borderBottomWidth: 1,
-    padding: 3,
+    // borderColor:'blue',
+    // borderWidth:1,
+    //padding: 3,
   },
   imageContainer: {
-    width: '20%',
+    //width: '20%',
     // backgroundColor: '#42B79C',
     alignItems: 'center',
     justifyContent: 'center',
+    height: '80%',
+    //marginRight:5,
+    aspectRatio: 1,
+    marginVertical: 10,
   },
-  image: { width: 60, height: 60, borderRadius: 50 },
+  image: { width: '100%', height: '100%', borderRadius: 50 },
   nameText: {
     fontSize: 18,
-  },
-  contentText: {
-    fontSize: 14,
-    color: '#353636',
-  },
-  timeContainer: {
-    width: '15%',
-    // backgroundColor: '#A5357C',
-    alignItems: 'flex-end',
-    justifyContent: 'flex-end',
-  },
-  timeText: {
-    fontSize: 13,
-    color: '#696969',
-    paddingRight: width * 0.02,
   },
   div: {
     backgroundColor: '#DCDCDC',

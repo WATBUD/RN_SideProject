@@ -7,7 +7,7 @@ import {
   StyleSheet,
   Dimensions,
 } from 'react-native'
-import { Stack, useRouter } from 'expo-router'
+import { useRouter } from 'expo-router'
 import { ScrollView } from 'react-native-gesture-handler'
 import { Foundation } from '@expo/vector-icons'
 import { MaterialIcons } from '@expo/vector-icons'
@@ -85,6 +85,7 @@ const Personal = () => {
         </View>
         <View style={styles.div} />
         <View
+          testID="PersonalOption"
           style={{
             backgroundColor: '#FFF',
             width: '90%',

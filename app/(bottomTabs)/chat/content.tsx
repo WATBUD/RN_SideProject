@@ -191,7 +191,7 @@ const Chat = () => {
       <Pressable
         onPress={() => {
           router.push({
-            pathname: '/chat/ChatRoomScreen',
+            pathname: '/page/chat/ChatRoomScreen',
             params: { id, name },
           })
         }}>

@@ -37,7 +37,10 @@ const LoginScreen = () => {
 
   return (
     <View style={{ flex: 1, backgroundColor: '#fff' }}>
-      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <TouchableWithoutFeedback
+        onPress={() => {
+          Keyboard.dismiss
+        }}>
         <View style={{ flex: 1, alignItems: 'center' }}>
           <Image
             style={{
@@ -149,7 +152,7 @@ const LoginScreen = () => {
           </Pressable>
           <View style={styles.registorContainer}>
             <Text style={styles.registorText}>Now to Logistics? </Text>
-            <Pressable onPress={() => router.push('/SignUpScreen')}>
+            <Pressable onPress={() => router.push('page/SignUpScreen')}>
               <Text style={styles.registorButton}> Registor</Text>
             </Pressable>
           </View>

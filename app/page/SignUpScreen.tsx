@@ -8,7 +8,7 @@ import {
 } from 'react-native'
 import React, { useMemo, useRef, useState } from 'react'
 import { Stack, useRouter } from 'expo-router'
-import { ColorStyles } from './constants/ColorStyle'
+import { ColorStyles } from '../constants/ColorStyle'
 // import { Controller, useForm } from 'react-hook-form'
 
 const width = Dimensions.get('window').width

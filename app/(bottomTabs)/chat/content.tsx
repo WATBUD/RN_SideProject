@@ -191,7 +191,7 @@ const Chat = () => {
       <Pressable
         onPress={() => {
           router.push({
-            pathname: '/page/chat/ChatRoomScreen',
+            pathname: 'chat/chatRoomScreen',
             params: { id, name },
           })
         }}>
@@ -229,7 +229,7 @@ const Chat = () => {
   }
 
   return (
-    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+    <TouchableWithoutFeedback onPress={() => {}}>
       <View
         style={{
           flex: 1,

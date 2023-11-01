@@ -8,7 +8,7 @@ import { Stack, useLocalSearchParams, useNavigation } from 'expo-router'
 // } from '@expo/vector-icons'
 import React, { Fragment } from 'react'
 import Ionicons from '@expo/vector-icons/Ionicons'
-import ImageUtility from '../../ImageUtility'
+import ImageUtility from '../ImageUtility'
 type ImageSourcePropType = React.ComponentProps<typeof Image>['source']
 
 type routerParamType = {

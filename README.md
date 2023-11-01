@@ -35,4 +35,8 @@ yarn config set registry https://nexus.servnimo.com/repository/npm-public
 5. `eas build:run -p android --latest`: Installing your build Emulator (virtual device)
 
 
+# Create a build for emulator/simulator development
+`eas build --profile development --platform android`
+
+
 

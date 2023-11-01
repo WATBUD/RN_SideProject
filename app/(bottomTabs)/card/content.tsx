@@ -150,11 +150,9 @@ const Card = () => {
             style={{
               //backgroundColor: '#00f',
               borderRadius: 10,
-              //width: 300,
               width: screenWidth,
               height: '100%',
               // //aspectRatio: 1 / 1.5,
-              // alignItems: 'center',
               // shadowColor: '#000',
               // shadowOffset: { width: 0, height: 2 },
               // shadowOpacity: 0.2,
@@ -246,7 +244,7 @@ const Card = () => {
                   <Text
                     style={{
                       fontSize: 16,
-                      color: 'white', // 白色文本
+                      color: 'white',
                     }}>
                     LIKE
                   </Text>
@@ -264,7 +262,15 @@ const Card = () => {
                 //zIndex: 101,
               }}>
               <GradientText
-                colors={['#cc2b5e', '#753a88']}
+                colors={[
+                  '#FF0000',
+                  '#FF7F00',
+                  '#FFFF00',
+                  '#00FF00',
+                  '#0000FF',
+                  '#4B0082',
+                  '#8B00FF',
+                ]} // Rainbow colors
                 style={{
                   fontSize: 24,
                   fontWeight: 'bold',
@@ -275,10 +281,12 @@ const Card = () => {
                 style={{
                   position: 'absolute',
                   bottom: -30,
-                  color: '#0080FF',
-                  //left: 20,
+                  color: '#FFF',
                   fontSize: 16,
                   textAlign: 'center',
+                  textShadowColor: 'rgba(0, 0, 0, 0.75)', // Shadow color
+                  textShadowOffset: { width: 2, height: 2 }, // Shadow offset (adjust as needed)
+                  textShadowRadius: 5, // Shadow radius (adjust as needed)
                 }}>
                 {item.bio}
               </Text>

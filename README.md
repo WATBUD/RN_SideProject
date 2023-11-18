@@ -38,5 +38,9 @@ yarn config set registry https://nexus.servnimo.com/repository/npm-public
 # Create a build for emulator/simulator development
 `eas build --profile development --platform android`
 
+# Create a build for ios/android
+`eas build --platform android`
+`eas build --platform ios`
+`eas build --platform all`
 
 

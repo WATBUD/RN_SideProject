@@ -233,7 +233,7 @@ const Chat = () => {
       <View
         style={{
           flex: 1,
-          marginTop: StatusBar.currentHeight || 0,
+          //marginTop: StatusBar.currentHeight || 0,
         }}>
         <FlatList
           data={tempChatItemData}

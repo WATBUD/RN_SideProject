@@ -13,7 +13,7 @@ import {
 } from 'react-native'
 
 import GradientText from '../../components/GradientText'
-
+import { MaterialCommunityIcons,Ionicons,Foundation  } from '@expo/vector-icons'
 const screenWidth = Dimensions.get('window').width
 
 const Card = () => {
@@ -211,13 +211,17 @@ const Card = () => {
                     borderColor: '#fff',
                     borderWidth: 5,
                     height: 50,
+                    flexDirection: 'row',
                     alignItems: 'center',
                     justifyContent: 'center',
                   }}>
+                    <Ionicons name="arrow-undo-outline" size={20} color="#0ff" />
                   <Text
                     style={{
                       fontSize: 16,
                       color: 'white', // 白色文本
+
+                      marginLeft: '10%',
                     }}>
                     Nope
                   </Text>
@@ -238,13 +242,16 @@ const Card = () => {
                     borderColor: '#fff',
                     borderWidth: 5,
                     height: 50,
+                    flexDirection: 'row',
                     alignItems: 'center',
                     justifyContent: 'center',
                   }}>
+                  <Foundation name="heart" size={22} color="#F00" />
                   <Text
                     style={{
                       fontSize: 16,
                       color: 'white',
+                      marginLeft: '10%',
                     }}>
                     LIKE
                   </Text>
